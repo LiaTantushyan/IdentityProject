@@ -1,0 +1,17 @@
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\obj\Debug\net6.0\IdentityProj.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\obj\Debug\net6.0\IdentityProj.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\obj\Debug\net6.0\IdentityProj.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\obj\Debug\net6.0\IdentityProj.Infrastructure.AssemblyInfo.cs
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\obj\Debug\net6.0\IdentityProj.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\bin\Debug\net6.0\IdentityProj.Infrastructure.deps.json
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\bin\Debug\net6.0\IdentityProj.Infrastructure.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\bin\Debug\net6.0\IdentityProj.Infrastructure.pdb
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\bin\Debug\net6.0\IdentityProj.Data.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\bin\Debug\net6.0\IdentityProj.Data.pdb
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\obj\Debug\net6.0\IdentityProj.Infrastructure.csproj.CopyComplete
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\obj\Debug\net6.0\IdentityProj.Infrastructure.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\obj\Debug\net6.0\refint\IdentityProj.Infrastructure.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\obj\Debug\net6.0\IdentityProj.Infrastructure.pdb
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\obj\Debug\net6.0\ref\IdentityProj.Infrastructure.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\bin\Debug\net6.0\IdentityProj.Infrastructure.runtimeconfig.json
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\obj\Debug\net6.0\IdentityProj.Infrastructure.genruntimeconfig.cache

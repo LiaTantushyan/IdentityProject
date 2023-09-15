@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "m4K6DlkANrtOeisOy3stcgvK3j8XQM93Gj9j8XuyI7JrU8ohs97boJRokwOsQs3dosqtheEcCNzmnHodJt/Baw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\l.tantushyan\\Desktop\\Projs\\IdentityProj\\IdentityProj.Services\\IdentityProj.Services.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\l.tantushyan\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
+    "C:\\Users\\l.tantushyan\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\l.tantushyan\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
