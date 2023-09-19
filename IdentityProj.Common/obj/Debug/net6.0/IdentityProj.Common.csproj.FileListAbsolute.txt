@@ -1,0 +1,12 @@
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Common\bin\Debug\net6.0\IdentityProj.Common.deps.json
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Common\bin\Debug\net6.0\IdentityProj.Common.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Common\bin\Debug\net6.0\IdentityProj.Common.pdb
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Common\obj\Debug\net6.0\IdentityProj.Common.csproj.AssemblyReference.cache
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Common\obj\Debug\net6.0\IdentityProj.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Common\obj\Debug\net6.0\IdentityProj.Common.AssemblyInfoInputs.cache
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Common\obj\Debug\net6.0\IdentityProj.Common.AssemblyInfo.cs
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Common\obj\Debug\net6.0\IdentityProj.Common.csproj.CoreCompileInputs.cache
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Common\obj\Debug\net6.0\IdentityProj.Common.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Common\obj\Debug\net6.0\refint\IdentityProj.Common.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Common\obj\Debug\net6.0\IdentityProj.Common.pdb
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Common\obj\Debug\net6.0\ref\IdentityProj.Common.dll
