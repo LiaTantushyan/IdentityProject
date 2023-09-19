@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "IdentityProj.Infrastructure/1.0.0": {
         "dependencies": {
+          "IdentityProj.Common": "1.0.0",
           "IdentityProj.Data": "1.0.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.22",
@@ -1002,6 +1003,11 @@
           }
         }
       },
+      "IdentityProj.Common/1.0.0": {
+        "runtime": {
+          "IdentityProj.Common.dll": {}
+        }
+      },
       "IdentityProj.Data/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.22",
@@ -1648,6 +1654,11 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "IdentityProj.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "IdentityProj.Data/1.0.0": {
       "type": "project",

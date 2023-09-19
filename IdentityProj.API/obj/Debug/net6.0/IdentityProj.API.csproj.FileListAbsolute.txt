@@ -96,3 +96,15 @@ C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6
 C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\System.Text.Json.dll
 C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\MediatR.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\MediatR.Behaviors.Authorization.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\MediatR.Contracts.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\IdentityProj.Services.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\IdentityProj.Services.pdb
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\MediatR.Extensions.FluentValidation.AspNetCore.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\IdentityProj.Common.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\IdentityProj.Common.pdb
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

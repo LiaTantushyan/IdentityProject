@@ -1,4 +1,6 @@
+using System.Reflection;
 using IdentityProj.Infrastructure;
+using IdentityProj.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +10,11 @@ builder.Services.AddControllers();
 //builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 //builder.Services.AddIdentity<ApplicationUser, IdentityRole>();
 
-builder.Services.AddInf(builder.Configuration);
+builder.Services.AddServices();
+
+builder.Services.AddInfrastructure(builder.Configuration);
+
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

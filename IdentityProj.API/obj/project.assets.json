@@ -2,6 +2,35 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "[12.0.1]",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Azure.Core/1.25.0": {
         "type": "package",
         "dependencies": {
@@ -42,6 +71,36 @@
         },
         "runtime": {
           "lib/netstandard2.0/Azure.Identity.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "FluentValidation/11.7.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "FluentValidation.DependencyInjectionExtensions/11.0.0": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "11.0.0",
+          "Microsoft.Extensions.Dependencyinjection.Abstractions": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
             "related": ".xml"
           }
         }
@@ -113,6 +172,64 @@
           "lib/netstandard2.0/IdentityServer4.Storage.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "MediatR/12.1.1": {
+        "type": "package",
+        "dependencies": {
+          "MediatR.Contracts": "[2.0.1, 3.0.0)",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/MediatR.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/MediatR.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MediatR.Behaviors.Authorization/12.0.2": {
+        "type": "package",
+        "dependencies": {
+          "MediatR": "12.0.1",
+          "MediatR.Contracts": "2.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/MediatR.Behaviors.Authorization.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MediatR.Behaviors.Authorization.dll": {}
+        }
+      },
+      "MediatR.Contracts/2.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MediatR.Contracts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/MediatR.Contracts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MediatR.Extensions.FluentValidation.AspNetCore/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "11.0.0",
+          "FluentValidation.DependencyInjectionExtensions": "11.0.0",
+          "MediatR": "11.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/MediatR.Extensions.FluentValidation.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/MediatR.Extensions.FluentValidation.AspNetCore.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication/2.2.0": {
@@ -454,7 +571,7 @@
           }
         }
       },
-      "Microsoft.CSharp/4.5.0": {
+      "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.0/_._": {}
@@ -1757,6 +1874,16 @@
           }
         }
       },
+      "IdentityProj.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/IdentityProj.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IdentityProj.Common.dll": {}
+        }
+      },
       "IdentityProj.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1775,6 +1902,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "IdentityProj.Common": "1.0.0",
           "IdentityProj.Data": "1.0.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.22",
@@ -1789,10 +1917,61 @@
         "runtime": {
           "bin/placeholder/IdentityProj.Infrastructure.dll": {}
         }
+      },
+      "IdentityProj.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper": "12.0.1",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+          "FluentValidation": "11.7.1",
+          "IdentityProj.Common": "1.0.0",
+          "IdentityProj.Data": "1.0.0",
+          "IdentityProj.Infrastructure": "1.0.0",
+          "MediatR": "12.1.1",
+          "MediatR.Behaviors.Authorization": "12.0.2",
+          "MediatR.Extensions.FluentValidation.AspNetCore": "4.0.0",
+          "Microsoft.Extensions.Identity.Core": "6.0.22"
+        },
+        "compile": {
+          "bin/placeholder/IdentityProj.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IdentityProj.Services.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "AutoMapper/12.0.1": {
+      "sha512": "hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
+      "type": "package",
+      "path": "automapper/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.12.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.dll",
+        "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+      "sha512": "+g/K+Vpe3gGMKGzjslMOdqNlkikScDjWfVvmWTayrDHaG/n2pPmFBMa+jKX1r/h6BDGFdkyRjAuhFE3ykW+r1g==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
+      ]
+    },
     "Azure.Core/1.25.0": {
       "sha512": "X8Dd4sAggS84KScWIjEbFAdt2U1KDolQopTPoHVubG2y3CM54f9l6asVrP5Uy384NWXjsspPYaJgz5xHc+KvTA==",
       "type": "package",
@@ -1829,6 +2008,46 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "FluentValidation/11.7.1": {
+      "sha512": "w9Al4gls6iVGFbTd/NPOPlwzqDTghH+ntL4c4FYUatc+LeybpIwhYArLykZJP/VjF2n3ihj3ws+1yd7KR5lQlg==",
+      "type": "package",
+      "path": "fluentvalidation/11.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.11.7.1.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net5.0/FluentValidation.dll",
+        "lib/net5.0/FluentValidation.xml",
+        "lib/net6.0/FluentValidation.dll",
+        "lib/net6.0/FluentValidation.xml",
+        "lib/net7.0/FluentValidation.dll",
+        "lib/net7.0/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml",
+        "lib/netstandard2.1/FluentValidation.dll",
+        "lib/netstandard2.1/FluentValidation.xml"
+      ]
+    },
+    "FluentValidation.DependencyInjectionExtensions/11.0.0": {
+      "sha512": "jBQjbAxpXWnoalvGKTLyUoArNJ1dnIpxOknENxa7XuXHMy80Gc+VNJk5OoOpVX8JfhpZkLQOaPozycGVtUo7Tg==",
+      "type": "package",
+      "path": "fluentvalidation.dependencyinjectionextensions/11.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.dependencyinjectionextensions.11.0.0.nupkg.sha512",
+        "fluentvalidation.dependencyinjectionextensions.nuspec",
+        "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll",
+        "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.xml",
+        "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll",
+        "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.xml"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -1898,6 +2117,62 @@
         "lib/netstandard2.0/IdentityServer4.Storage.dll",
         "lib/netstandard2.0/IdentityServer4.Storage.pdb",
         "lib/netstandard2.0/IdentityServer4.Storage.xml"
+      ]
+    },
+    "MediatR/12.1.1": {
+      "sha512": "1AbwzzeS6gn4NdcO6A9LfKS5TXXgAiUQM3J18dREHa7O7TrdCXJ5dNFeRBpzPZY7UWl5Kby+n9pWrPJe3SDiMA==",
+      "type": "package",
+      "path": "mediatr/12.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/net6.0/MediatR.dll",
+        "lib/net6.0/MediatR.xml",
+        "lib/netstandard2.0/MediatR.dll",
+        "lib/netstandard2.0/MediatR.xml",
+        "mediatr.12.1.1.nupkg.sha512",
+        "mediatr.nuspec"
+      ]
+    },
+    "MediatR.Behaviors.Authorization/12.0.2": {
+      "sha512": "ee09ig/nKWGRKcBhiPxxXE6rEFXJi7S6yZAfqX9lU57Q4arnmGUgiRz+s7h1mYlsB/pKmbtSxiUFKxbW8SxE1w==",
+      "type": "package",
+      "path": "mediatr.behaviors.authorization/12.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/netstandard2.0/MediatR.Behaviors.Authorization.dll",
+        "mediatr.behaviors.authorization.12.0.2.nupkg.sha512",
+        "mediatr.behaviors.authorization.nuspec"
+      ]
+    },
+    "MediatR.Contracts/2.0.1": {
+      "sha512": "FYv95bNT4UwcNA+G/J1oX5OpRiSUxteXaUt2BJbRSdRNiIUNbggJF69wy6mnk2wYToaanpdXZdCwVylt96MpwQ==",
+      "type": "package",
+      "path": "mediatr.contracts/2.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/netstandard2.0/MediatR.Contracts.dll",
+        "lib/netstandard2.0/MediatR.Contracts.xml",
+        "mediatr.contracts.2.0.1.nupkg.sha512",
+        "mediatr.contracts.nuspec"
+      ]
+    },
+    "MediatR.Extensions.FluentValidation.AspNetCore/4.0.0": {
+      "sha512": "jpjRcDAaPvmy18duaO05JX5WRSKd/GIs5tx+DDC+nT60f8z6LBW5+Quvf5Rwg6FbdAh4oemg6+ODf7b8lPJfSg==",
+      "type": "package",
+      "path": "mediatr.extensions.fluentvalidation.aspnetcore/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.1/MediatR.Extensions.FluentValidation.AspNetCore.dll",
+        "logo.png",
+        "mediatr.extensions.fluentvalidation.aspnetcore.4.0.0.nupkg.sha512",
+        "mediatr.extensions.fluentvalidation.aspnetcore.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
@@ -2292,10 +2567,10 @@
         "version.txt"
       ]
     },
-    "Microsoft.CSharp/4.5.0": {
-      "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+    "Microsoft.CSharp/4.7.0": {
+      "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "type": "package",
-      "path": "microsoft.csharp/4.5.0",
+      "path": "microsoft.csharp/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2308,6 +2583,7 @@
         "lib/netcoreapp2.0/_._",
         "lib/netstandard1.3/Microsoft.CSharp.dll",
         "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.xml",
         "lib/portable-net45+win8+wp8+wpa81/_._",
         "lib/uap10.0.16299/_._",
         "lib/win8/_._",
@@ -2317,7 +2593,7 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.5.0.nupkg.sha512",
+        "microsoft.csharp.4.7.0.nupkg.sha512",
         "microsoft.csharp.nuspec",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
@@ -4641,6 +4917,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "IdentityProj.Common/1.0.0": {
+      "type": "project",
+      "path": "../IdentityProj.Common/IdentityProj.Common.csproj",
+      "msbuildProject": "../IdentityProj.Common/IdentityProj.Common.csproj"
+    },
     "IdentityProj.Data/1.0.0": {
       "type": "project",
       "path": "../IdentityProj.Data/IdentityProj.Data.csproj",
@@ -4650,13 +4931,20 @@
       "type": "project",
       "path": "../IdentityProj.Infrastructure/IdentityProj.Infrastructure.csproj",
       "msbuildProject": "../IdentityProj.Infrastructure/IdentityProj.Infrastructure.csproj"
+    },
+    "IdentityProj.Services/1.0.0": {
+      "type": "project",
+      "path": "../IdentityProj.Services/IdentityProj.Services.csproj",
+      "msbuildProject": "../IdentityProj.Services/IdentityProj.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "IdentityProj.Data >= 1.0.0",
       "IdentityProj.Infrastructure >= 1.0.0",
+      "IdentityProj.Services >= 1.0.0",
       "IdentityServer4 >= 4.1.2",
+      "MediatR >= 12.1.1",
       "Microsoft.EntityFrameworkCore >= 7.0.11",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.11",
       "Swashbuckle.AspNetCore >= 6.5.0"
@@ -4692,6 +4980,9 @@
             },
             "C:\\Users\\l.tantushyan\\Desktop\\Projs\\IdentityProj\\IdentityProj.Infrastructure\\IdentityProj.Infrastructure.csproj": {
               "projectPath": "C:\\Users\\l.tantushyan\\Desktop\\Projs\\IdentityProj\\IdentityProj.Infrastructure\\IdentityProj.Infrastructure.csproj"
+            },
+            "C:\\Users\\l.tantushyan\\Desktop\\Projs\\IdentityProj\\IdentityProj.Services\\IdentityProj.Services.csproj": {
+              "projectPath": "C:\\Users\\l.tantushyan\\Desktop\\Projs\\IdentityProj\\IdentityProj.Services\\IdentityProj.Services.csproj"
             }
           }
         }
@@ -4709,6 +5000,10 @@
           "IdentityServer4": {
             "target": "Package",
             "version": "[4.1.2, )"
+          },
+          "MediatR": {
+            "target": "Package",
+            "version": "[12.1.1, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",

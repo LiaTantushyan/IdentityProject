@@ -1583,6 +1583,16 @@
           }
         }
       },
+      "IdentityProj.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/IdentityProj.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IdentityProj.Common.dll": {}
+        }
+      },
       "IdentityProj.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -4015,6 +4025,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "IdentityProj.Common/1.0.0": {
+      "type": "project",
+      "path": "../IdentityProj.Common/IdentityProj.Common.csproj",
+      "msbuildProject": "../IdentityProj.Common/IdentityProj.Common.csproj"
+    },
     "IdentityProj.Data/1.0.0": {
       "type": "project",
       "path": "../IdentityProj.Data/IdentityProj.Data.csproj",
@@ -4023,6 +4038,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "IdentityProj.Common >= 1.0.0",
       "IdentityProj.Data >= 1.0.0",
       "Microsoft.AspNetCore.Identity >= 2.2.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.22",
@@ -4058,6 +4074,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\l.tantushyan\\Desktop\\Projs\\IdentityProj\\IdentityProj.Common\\IdentityProj.Common.csproj": {
+              "projectPath": "C:\\Users\\l.tantushyan\\Desktop\\Projs\\IdentityProj\\IdentityProj.Common\\IdentityProj.Common.csproj"
+            },
             "C:\\Users\\l.tantushyan\\Desktop\\Projs\\IdentityProj\\IdentityProj.Data\\IdentityProj.Data.csproj": {
               "projectPath": "C:\\Users\\l.tantushyan\\Desktop\\Projs\\IdentityProj\\IdentityProj.Data\\IdentityProj.Data.csproj"
             }

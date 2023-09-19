@@ -20,6 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\IdentityProj.Common\IdentityProj.Common.csproj" />
       <ProjectReference Include="..\IdentityProj.Data\IdentityProj.Data.csproj" />
     </ItemGroup>
 

@@ -15,3 +15,5 @@ C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\obj
 C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\obj\Debug\net6.0\ref\IdentityProj.Infrastructure.dll
 C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\bin\Debug\net6.0\IdentityProj.Infrastructure.runtimeconfig.json
 C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\obj\Debug\net6.0\IdentityProj.Infrastructure.genruntimeconfig.cache
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\bin\Debug\net6.0\IdentityProj.Common.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Infrastructure\bin\Debug\net6.0\IdentityProj.Common.pdb

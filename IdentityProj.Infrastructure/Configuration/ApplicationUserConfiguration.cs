@@ -14,5 +14,9 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
 
         builder.Property(p => p.TimeZone)
             .HasDefaultValue("Asia/Yerevan");
+
+        builder.HasOne(p => p.Company)
+            .WithMany(p => p.Employees)
+            .HasForeignKey(p => p.CompanyId);
     }
 }

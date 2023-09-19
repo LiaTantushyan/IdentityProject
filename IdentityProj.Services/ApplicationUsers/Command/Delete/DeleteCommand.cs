@@ -1,6 +1,9 @@
-﻿namespace IdentityProj.Services.ApplicationUsers.Command.Delete;
+﻿using IdentityProj.Common.Models;
+using MediatR;
 
-public class DeleteCommand
+namespace IdentityProj.Services.ApplicationUsers.Command.Delete;
+
+public class DeleteCommand: IRequest<ResultInfoDTO>
 {
-    
+    public int Id { get; set; }
 }
