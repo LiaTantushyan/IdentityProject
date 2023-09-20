@@ -11,9 +11,9 @@ public class EntityToDTO : Profile
     public EntityToDTO()
     {
         CreateMap<ApplicationUser, GetUserDto>();
-        CreateMap<ApplicationUser, CreateUserDTO>();
+        CreateMap<ApplicationUser, CreateUserDto>();
 
-        CreateMap<IdentityResult, CreateUserDTO>()
+        CreateMap<IdentityResult, CreateUserDto>()
             .ForMember(x => x.Errors, y => y
                 .MapFrom(z => z.Errors
                     .Select(d => d.Description)));
@@ -23,7 +23,7 @@ public class EntityToDTO : Profile
                 .MapFrom(z => z.Errors
                     .Select(d => d.Description)));
         
-        CreateMap<IdentityResult, ResultInfoDTO>()
+        CreateMap<IdentityResult, ResultInfoDto>()
             .ForMember(x => x.Errors, y => y
                 .MapFrom(z => z.Errors
                     .Select(d => d.Description)));

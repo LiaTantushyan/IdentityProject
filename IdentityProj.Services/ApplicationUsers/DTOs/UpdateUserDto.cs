@@ -2,7 +2,7 @@
 
 namespace IdentityProj.Services.ApplicationUsers.DTOs;
 
-public class UpdateUserDto: ResultInfoDTO
+public class UpdateUserDto: ResultInfoDto
 {
     public int Id { get; set; }
     

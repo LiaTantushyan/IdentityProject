@@ -10,8 +10,8 @@ public class DtoToResponse : Profile
 {
     public DtoToResponse()
     {
-        CreateMap<CreateUserDTO, CreateUserResponse>();
+        CreateMap<CreateUserDto, CreateUserResponse>();
         CreateMap<UpdateUserDto, UpdateUserResponse>();
-        CreateMap<ResultInfoDTO, ResponseModel>();
+        CreateMap<ResultInfoDto, ResponseModel>();
     }
 }

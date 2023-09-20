@@ -22,8 +22,4 @@
       <ProjectReference Include="..\IdentityProj.Infrastructure\IdentityProj.Infrastructure.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Company\Query\" />
-    </ItemGroup>
-
 </Project>

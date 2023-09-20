@@ -1,4 +1,5 @@
 using System.Reflection;
+using IdentityProj.Extensions;
 using IdentityProj.Infrastructure;
 using IdentityProj.Services;
 
@@ -13,6 +14,7 @@ builder.Services.AddControllers();
 builder.Services.AddServices();
 
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddConfigurations(builder.Configuration);
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 

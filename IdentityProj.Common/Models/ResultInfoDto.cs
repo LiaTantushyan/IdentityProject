@@ -1,6 +1,6 @@
 namespace IdentityProj.Common.Models;
 
-public class ResultInfoDTO
+public class ResultInfoDto
 {
     public bool Succeeded { get; set; }
 

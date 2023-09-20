@@ -7,5 +7,5 @@ public interface IUnitOfWork
 {
     public ICompanyRepository CompanyRepository { get; }
 
-    Task<ResultInfoDTO> SaveAsync();
+    Task<ResultInfoDto> SaveAsync();
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JysUi0HG37g3aEI7h84lA7t5dBYtjTBN4FY5QSs5XkyOC2tm4fZ6NDsbMiATWz5TVOEkobgTOUgxpvruAMUbQQ==",
+  "dgSpecHash": "4BrzUePO6lrmof4RoyaU0qMeOJsCY6nc6jd+VK2N8W9QyKa43Qj4giEeg6l3irtVo6HWSgKoik6QnLNUIZwFqg==",
   "success": true,
   "projectFilePath": "C:\\Users\\l.tantushyan\\Desktop\\Projs\\IdentityProj\\IdentityProj.API\\IdentityProj.API.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\l.tantushyan\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\l.tantushyan\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",
     "C:\\Users\\l.tantushyan\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\l.tantushyan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.22\\microsoft.aspnetcore.authentication.jwtbearer.6.0.22.nupkg.sha512",
     "C:\\Users\\l.tantushyan\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\3.1.0\\microsoft.aspnetcore.authentication.openidconnect.3.1.0.nupkg.sha512",
     "C:\\Users\\l.tantushyan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.22\\microsoft.aspnetcore.cryptography.internal.6.0.22.nupkg.sha512",
     "C:\\Users\\l.tantushyan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.22\\microsoft.aspnetcore.cryptography.keyderivation.6.0.22.nupkg.sha512",

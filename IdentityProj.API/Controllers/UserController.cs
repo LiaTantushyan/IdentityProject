@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using AutoMapper;
-using IdentityProj.Infrastructure;
 using IdentityProj.Infrastructure.UnitOfWork;
 using IdentityProj.Models.Request.User;
 using IdentityProj.Models.Response.User;
@@ -16,11 +15,8 @@ namespace IdentityProj.Controllers;
 [Route("[controller]/[action]")]
 public class UserController : BaseController
 {
-    private readonly IUnitOfWork _unitOfWork;
-    
-    public UserController(IMapper mapper, IMediator mediator, ApplicationDbContext db, IUnitOfWork unitOfWork) : base(mapper, mediator)
+    public UserController(IMapper mapper, IMediator mediator) : base(mapper, mediator)
     {
-        _unitOfWork = unitOfWork;
     }
 
     [HttpGet]
@@ -40,10 +36,10 @@ public class UserController : BaseController
         var comm = Mapper.Map<UserCreateRequest, CreateCommand>(model);
         var result = await Mediator.Send(comm);
 
-        return Json(Mapper.Map<CreateUserDTO, CreateUserResponse>(result));
+        return Json(Mapper.Map<CreateUserDto, CreateUserResponse>(result));
     }
 
-    [HttpPost]
+    [HttpDelete]
     public async Task<IActionResult> Delete([FromQuery] int id)
     {
         var result = await Mediator.Send(new DeleteCommand

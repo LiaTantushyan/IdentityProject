@@ -18,11 +18,15 @@ public class CompanyConfiguration : IEntityTypeConfiguration<Company>
             .HasMaxLength(250);
 
         builder.Property(p => p.CreatedAt)
-            .HasDefaultValue(DateTime.UtcNow);
-
-        builder.Property(p => p.ModifiedAt)
-            .HasDefaultValue(DateTime.UtcNow);
-
+            .IsRequired()
+            .HasDefaultValueSql("CURRENT_TIMESTAMP")
+            .ValueGeneratedOnAdd();
+        
+        builder.Property(e => e.ModifiedAt)
+            .IsRequired()
+            .HasDefaultValueSql("CURRENT_TIMESTAMP")
+            .ValueGeneratedOnAddOrUpdate();
+        
         builder.Property(p => p.Status)
             .HasDefaultValue(Status.Active);
     }

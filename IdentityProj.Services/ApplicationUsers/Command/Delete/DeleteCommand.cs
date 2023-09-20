@@ -3,7 +3,7 @@ using MediatR;
 
 namespace IdentityProj.Services.ApplicationUsers.Command.Delete;
 
-public class DeleteCommand: IRequest<ResultInfoDTO>
+public class DeleteCommand: IRequest<ResultInfoDto>
 {
     public int Id { get; set; }
 }

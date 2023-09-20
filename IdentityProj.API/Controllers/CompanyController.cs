@@ -1,6 +1,12 @@
 ﻿using AutoMapper;
+using IdentityProj.Common.CustomExceptions;
+using IdentityProj.Common.Models;
+using IdentityProj.Data.Enumerations;
 using IdentityProj.Models.Request.Company;
+using IdentityProj.Models.Response;
 using IdentityProj.Services.Company.Command.Create;
+using IdentityProj.Services.Company.Command.Update;
+using IdentityProj.Services.Company.Query;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,9 +22,45 @@ public class CompanyController : BaseController
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CompanyCreate model)
     {
+        if (model.Status != null && !Enum.IsDefined(typeof(Status), model.Status))
+        {
+            return Json(new ResponseModel()
+                { Succeeded = false, Errors = new[] { ErrorMessages.WrongIncomingParameter } });
+        }
+
         var param = Mapper.Map<CompanyCreate, CreateCompanyCommand>(model);
 
-        var result = await Mediator.Send(model);
-        return Json("");
+        var result = await Mediator.Send(param);
+        return Json(result);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Get([FromQuery] int id)
+    {
+        var result = await Mediator.Send(new GetCompanyByIdQuery
+        {
+            Id = id
+        });
+
+        return Json(result);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Update([FromBody] CompanyUpdate model)
+    {
+        if (model.Status != null && !Enum.IsDefined(typeof(Status), model.Status))
+        {
+            return Json(new ResponseModel()
+            {
+                Succeeded = false, 
+                Errors = new[] { ErrorMessages.WrongIncomingParameter }
+            });
+        }
+
+        var param = Mapper.Map<CompanyUpdate, UpdateCompanyCommand>(model);
+
+        var result = await Mediator.Send(param);
+
+        return Json(Mapper.Map<ResultInfoDto, ResponseModel>(result));
     }
 }

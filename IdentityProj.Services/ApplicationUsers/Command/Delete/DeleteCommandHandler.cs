@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace IdentityProj.Services.ApplicationUsers.Command.Delete;
 
-public class DeleteCommandHandler : BaseService, IRequestHandler<DeleteCommand, ResultInfoDTO>
+public class DeleteCommandHandler : BaseService, IRequestHandler<DeleteCommand, ResultInfoDto>
 {
     public DeleteCommandHandler(
         IMapper mapper,
@@ -15,12 +15,12 @@ public class DeleteCommandHandler : BaseService, IRequestHandler<DeleteCommand, 
     {
     }
 
-    public async Task<ResultInfoDTO> Handle(DeleteCommand request, CancellationToken cancellationToken)
+    public async Task<ResultInfoDto> Handle(DeleteCommand request, CancellationToken cancellationToken)
     {
         var user = await UserManagerRepository.FindByIdAsync(request.Id.ToString());
         if (user == null)
         {
-            return new ResultInfoDTO()
+            return new ResultInfoDto()
             {
                 Succeeded = false,
                 Errors = new[] { ErrorMessages.UserNotFound }
@@ -29,6 +29,6 @@ public class DeleteCommandHandler : BaseService, IRequestHandler<DeleteCommand, 
 
         var result = await UserManagerRepository.DeleteAsync(user);
 
-        return Mapper.Map<IdentityResult, ResultInfoDTO>(result);
+        return Mapper.Map<IdentityResult, ResultInfoDto>(result);
     }
 }

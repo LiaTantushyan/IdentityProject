@@ -118,18 +118,18 @@ namespace IdentityProj.Infrastructure.Migrations
                         .HasMaxLength(250)
                         .HasColumnType("character varying(250)");
 
-                    b.Property<DateTime?>("CreatedAt")
+                    b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
-                        .HasDefaultValue(new DateTime(2023, 9, 19, 11, 37, 33, 804, DateTimeKind.Utc).AddTicks(2052));
+                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
 
                     b.Property<int?>("CreatedById")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime?>("ModifiedAt")
-                        .ValueGeneratedOnAdd()
+                    b.Property<DateTime>("ModifiedAt")
+                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("timestamp with time zone")
-                        .HasDefaultValue(new DateTime(2023, 9, 19, 11, 37, 33, 804, DateTimeKind.Utc).AddTicks(2137));
+                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
 
                     b.Property<int?>("ModifiedBy")
                         .HasColumnType("integer");

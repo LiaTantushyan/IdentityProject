@@ -19,8 +19,5 @@ public static class DependencyInjection
         services.AddIdentity<ApplicationUser, IdentityRole<int>>(opt => opt.User.RequireUniqueEmail = true)
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
-
-        services.AddScoped<ICompanyRepository, CompanyRepository>();
-        services.AddScoped<IUnitOfWork, UnitOfWork.UnitOfWork>();
     }
 }

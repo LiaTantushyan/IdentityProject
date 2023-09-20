@@ -11,5 +11,5 @@ public class CompanyCreate
     [Required]
     public string Address { get; set; }
 
-    public Status Status { get; set; }
+    public Status? Status { get; set; }
 }

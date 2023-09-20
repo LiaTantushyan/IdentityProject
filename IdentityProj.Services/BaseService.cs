@@ -8,6 +8,7 @@ public class BaseService
 {
     private readonly IMapper _mapper;
     private readonly UserManagerRepository _userManagerRepo;
+    
     protected BaseService(
         IMapper mapper,
         UserManagerRepository userManagerRepo)

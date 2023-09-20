@@ -36,4 +36,6 @@ public class CommonRepository<T> : ICommonRepository<T> where T : class
     {
         _dbContext.Set<T>().Update(entity);
     }
+
+    protected ApplicationDbContext DbContext => _dbContext;
 }

@@ -2,7 +2,7 @@
 
 namespace IdentityProj.Services.ApplicationUsers.DTOs;
 
-public class CreateUserDTO : ResultInfoDTO
+public class CreateUserDto : ResultInfoDto
 {
     public int Id { get; set; }
     

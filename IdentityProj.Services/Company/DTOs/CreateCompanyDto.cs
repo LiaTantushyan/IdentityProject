@@ -2,7 +2,7 @@
 
 namespace IdentityProj.Services.Company.DTOs;
 
-public class CreateCompanyDTO
+public class CreateCompanyDto
 {
     public int Id { get; set; }
 

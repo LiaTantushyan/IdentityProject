@@ -3,7 +3,7 @@ using MediatR;
 
 namespace IdentityProj.Services.ApplicationUsers.Command.Create;
 
-public class CreateCommand: IRequest<CreateUserDTO>
+public class CreateCommand: IRequest<CreateUserDto>
 {
     public string? FullName { get; set; }
 

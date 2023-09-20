@@ -7,22 +7,20 @@ using Microsoft.AspNetCore.Identity;
 
 namespace IdentityProj.Services.ApplicationUsers.Command.Create;
 
-public class CreateCommandHandler : BaseService, IRequestHandler<CreateCommand, CreateUserDTO>
+public class CreateCommandHandler : BaseService, IRequestHandler<CreateCommand, CreateUserDto>
 {
     public CreateCommandHandler(
         IMapper mapper,
-        UserManagerRepository userManagerRepo): base(mapper, userManagerRepo)
+        UserManagerRepository userManagerRepo) : base(mapper, userManagerRepo)
     {
     }
 
-    public async Task<CreateUserDTO> Handle(CreateCommand request, CancellationToken cancellationToken)
+    public async Task<CreateUserDto> Handle(CreateCommand request, CancellationToken cancellationToken)
     {
         var user = Mapper.Map<ApplicationUser>(request);
-
         var result = await UserManagerRepository.CreateAsync(user, user.PasswordHash);
-    
-        var usr = Mapper.Map<ApplicationUser, CreateUserDTO>(user);
 
-        return Mapper.Map(result, usr);
+        var userDto = Mapper.Map<ApplicationUser, CreateUserDto>(user);
+        return Mapper.Map(result, userDto);
     }
 }

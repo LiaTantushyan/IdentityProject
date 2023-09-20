@@ -8,6 +8,7 @@ public class UnitOfWork : IDisposable, IUnitOfWork
 {
     private ICompanyRepository? _companyRepository;
     private readonly ApplicationDbContext _dbContext;
+    private bool _disposed;
 
     public UnitOfWork(ApplicationDbContext dbContext)
     {
@@ -16,7 +17,7 @@ public class UnitOfWork : IDisposable, IUnitOfWork
 
     public ICompanyRepository CompanyRepository => _companyRepository ??= new CompanyRepository(_dbContext);
 
-    public async Task<ResultInfoDTO> SaveAsync()
+    public async Task<ResultInfoDto> SaveAsync()
     {
         try
         {
@@ -24,14 +25,14 @@ public class UnitOfWork : IDisposable, IUnitOfWork
         }
         catch (Exception e)
         {
-            return new ResultInfoDTO()
+            return new ResultInfoDto()
             {
                 Succeeded = false,
                 Errors = new[] { e.ToString() }
             };
         }
 
-        return new ResultInfoDTO()
+        return new ResultInfoDto()
         {
             Succeeded = true,
         };
@@ -39,6 +40,7 @@ public class UnitOfWork : IDisposable, IUnitOfWork
 
     public void Dispose()
     {
-        throw new NotImplementedException();
+        //Dispose(true);
+        //GC.SuppressFinalize(this);
     }
 }
