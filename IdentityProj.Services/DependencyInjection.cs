@@ -14,13 +14,14 @@ namespace IdentityProj.Services
         public static void AddServices(this IServiceCollection service)
         {
             service.AddScoped<UserManagerRepository>();
-            service.AddScoped<ICompanyRepository, CompanyRepository>();
             service.AddScoped<IUnitOfWork, UnitOfWork>();
-            
+            service.AddScoped<ITokenService, TokenService>();
+            service.AddScoped<ICompanyRepository, CompanyRepository>();
+
             service.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
-            
+
             service.AddAutoMapper(Assembly.GetExecutingAssembly());
-            
+
             service.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             service.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         }

@@ -13,4 +13,6 @@ public static class ErrorMessages
     public static string WrongIncomingParameter = "Wrong incoming parameter";
     
     public static string CompanyNotFound = "Company not found";
+    
+    public static string WrongPassword = "Wrong password";
 }

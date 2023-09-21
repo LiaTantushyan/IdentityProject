@@ -3065,24 +3065,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\l.tantushyan\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\l.tantushyan\\Desktop\\Projs\\IdentityProj\\IdentityProj.Data\\IdentityProj.Data.csproj",
+      "projectUniqueName": "C:\\Users\\User\\RiderProjects\\IIdentityProj\\IdentityProj.Data\\IdentityProj.Data.csproj",
       "projectName": "IdentityProj.Data",
-      "projectPath": "C:\\Users\\l.tantushyan\\Desktop\\Projs\\IdentityProj\\IdentityProj.Data\\IdentityProj.Data.csproj",
-      "packagesPath": "C:\\Users\\l.tantushyan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\l.tantushyan\\Desktop\\Projs\\IdentityProj\\IdentityProj.Data\\obj\\",
+      "projectPath": "C:\\Users\\User\\RiderProjects\\IIdentityProj\\IdentityProj.Data\\IdentityProj.Data.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\RiderProjects\\IIdentityProj\\IdentityProj.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\l.tantushyan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3132,7 +3134,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

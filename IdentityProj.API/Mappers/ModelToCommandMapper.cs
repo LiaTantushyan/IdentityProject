@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using IdentityProj.Models.Request;
+using IdentityProj.Models.Request.Auth;
 using IdentityProj.Models.Request.Company;
 using IdentityProj.Models.Request.User;
 using IdentityProj.Services.ApplicationUsers.Command.Create;
 using IdentityProj.Services.ApplicationUsers.Command.Update;
+using IdentityProj.Services.Auth.Create;
 using IdentityProj.Services.Company.Command.Create;
 using IdentityProj.Services.Company.Command.Update;
 
@@ -18,6 +20,7 @@ public class ModelToCommandMapper: Profile
         CreateMap<UserUpdate, UpdateCommand>();
         CreateMap<CompanyCreate, CreateCompanyCommand>();
         CreateMap<CompanyUpdate, UpdateCompanyCommand>();
+        CreateMap<LoginRequest, CreateTokenCommand>();
     }
 }
 
