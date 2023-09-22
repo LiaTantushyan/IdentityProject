@@ -11,4 +11,6 @@ public class CreateCompanyCommand : IRequest<ResultInfoDto>
     public string? Address { get; set; }
 
     public Status? Status { get; set; }
+    
+    public int? UserId { get; set; }
 }

@@ -5,10 +5,10 @@ namespace IdentityProj.Models.Request.Company;
 
 public class CompanyCreate
 {
-    [Required]
+    [Required] 
     public string Name { get; set; }
 
-    [Required]
+    [Required] 
     public string Address { get; set; }
 
     public Status? Status { get; set; }

@@ -24,9 +24,4 @@
       <ProjectReference Include="..\IdentityProj.Data\IdentityProj.Data.csproj" />
     </ItemGroup>
 
-
-    <ItemGroup>
-      <Folder Include="Model\" />
-    </ItemGroup>
-
 </Project>

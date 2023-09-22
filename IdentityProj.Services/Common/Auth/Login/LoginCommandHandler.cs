@@ -5,24 +5,22 @@ using IdentityProj.Common.Models;
 using IdentityProj.Infrastructure.Interfaces;
 using IdentityProj.Infrastructure.Repositories;
 using MediatR;
-using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
 
-namespace IdentityProj.Services.Auth.Create;
+namespace IdentityProj.Services.Common.Auth.Login;
 
-public class CreateTokenCommandHandler : BaseService, IRequestHandler<CreateTokenCommand, TokenDto>
+public class LoginCommandHandler : BaseService, IRequestHandler<LoginCommand, TokenDto>
 {
-    private readonly ITokenService _tokenService;
+    private readonly IAuthService _authService;
 
-    public CreateTokenCommandHandler(
+    public LoginCommandHandler(
         IMapper mapper,
         UserManagerRepository userManagerRepo,
-        ITokenService tokenService) : base(mapper,
-        userManagerRepo)
+        IAuthService authService) : base(mapper, userManagerRepo)
     {
-        _tokenService = tokenService;
+        _authService = authService;
     }
 
-    public async Task<TokenDto> Handle(CreateTokenCommand request, CancellationToken cancellationToken)
+    public async Task<TokenDto> Handle(LoginCommand request, CancellationToken cancellationToken)
     {
         var user = await UserManagerRepository.FindByEmailAsync(request.Username);
 
@@ -45,14 +43,6 @@ public class CreateTokenCommandHandler : BaseService, IRequestHandler<CreateToke
             };
         }
 
-        var authClaims = new List<Claim>
-        {
-            new Claim(ClaimTypes.Name, user.UserName),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-        };
-
-        var accessToken = await _tokenService.GenerateTokenAsync(authClaims);
-
-        return await _tokenService.GenerateTokenAsync(authClaims);
+        return await _authService.GenerateTokenAsync(user);
     }
 }

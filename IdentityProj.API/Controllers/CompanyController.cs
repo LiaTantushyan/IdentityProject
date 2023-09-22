@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using MediatR;
+using AutoMapper;
 using IdentityProj.Common.CustomExceptions;
 using IdentityProj.Common.Models;
 using IdentityProj.Data.Enumerations;
@@ -7,11 +8,12 @@ using IdentityProj.Models.Response;
 using IdentityProj.Services.Company.Command.Create;
 using IdentityProj.Services.Company.Command.Update;
 using IdentityProj.Services.Company.Query;
-using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IdentityProj.Controllers;
 
+[Authorize]
 [Route("[controller]/[action]")]
 public class CompanyController : BaseController
 {
@@ -29,6 +31,7 @@ public class CompanyController : BaseController
         }
 
         var param = Mapper.Map<CompanyCreate, CreateCompanyCommand>(model);
+        param.UserId = GetCurrentUserId();
 
         var result = await Mediator.Send(param);
         return Json(result);
@@ -52,12 +55,13 @@ public class CompanyController : BaseController
         {
             return Json(new ResponseModel()
             {
-                Succeeded = false, 
+                Succeeded = false,
                 Errors = new[] { ErrorMessages.WrongIncomingParameter }
             });
         }
 
         var param = Mapper.Map<CompanyUpdate, UpdateCompanyCommand>(model);
+        param.UserId = GetCurrentUserId();
 
         var result = await Mediator.Send(param);
 

@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Security.Claims;
+using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,4 +22,14 @@ public class BaseController : Controller
     protected IMapper Mapper => _mapper;
 
     protected IMediator Mediator => _mediator;
+
+    protected int? GetCurrentUserId()
+    {
+        if (int.TryParse(User.FindFirstValue("id"), out int userId))
+        {
+            return userId;
+        }
+
+        return null;
+    }
 }

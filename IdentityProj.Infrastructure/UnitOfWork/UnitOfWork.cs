@@ -7,6 +7,7 @@ namespace IdentityProj.Infrastructure.UnitOfWork;
 public class UnitOfWork : IDisposable, IUnitOfWork
 {
     private ICompanyRepository? _companyRepository;
+    private IRefreshTokenRepository? _refreshTokenRepository;
     private readonly ApplicationDbContext _dbContext;
     private bool _disposed;
 
@@ -16,6 +17,7 @@ public class UnitOfWork : IDisposable, IUnitOfWork
     }
 
     public ICompanyRepository CompanyRepository => _companyRepository ??= new CompanyRepository(_dbContext);
+    public IRefreshTokenRepository RefreshTokenRepository => _refreshTokenRepository ??= new RefreshTokenRepository(_dbContext);
 
     public async Task<ResultInfoDto> SaveAsync()
     {
@@ -25,11 +27,7 @@ public class UnitOfWork : IDisposable, IUnitOfWork
         }
         catch (Exception e)
         {
-            return new ResultInfoDto()
-            {
-                Succeeded = false,
-                Errors = new[] { e.ToString() }
-            };
+            throw;
         }
 
         return new ResultInfoDto()

@@ -22,6 +22,49 @@ namespace IdentityProj.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("IdentityProj.Data.Entity.ApplicationIdentityRole", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("character varying(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("character varying(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex");
+
+                    b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ConcurrencyStamp = "81259a79-f857-4f19-8f5b-7f17cb0c068c",
+                            Name = "SuperAdmin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ConcurrencyStamp = "b350695d-00df-4278-b012-d60aae21567b",
+                            Name = "CompanyAdmin"
+                        });
+                });
+
             modelBuilder.Entity("IdentityProj.Data.Entity.ApplicationUser", b =>
                 {
                     b.Property<int>("Id")
@@ -149,7 +192,7 @@ namespace IdentityProj.Infrastructure.Migrations
                     b.ToTable("Companies");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<int>", b =>
+            modelBuilder.Entity("IdentityProj.Data.Entity.RefreshToken", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -157,25 +200,35 @@ namespace IdentityProj.Infrastructure.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("ExpiryDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("InValidated")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("JwtId")
                         .HasColumnType("text");
 
-                    b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("character varying(256)");
+                    b.Property<bool>("Used")
+                        .HasColumnType("boolean");
 
-                    b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("character varying(256)");
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<int?>("UserId1")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasDatabaseName("RoleNameIndex");
+                    b.HasIndex("UserId1");
 
-                    b.ToTable("AspNetRoles", (string)null);
+                    b.ToTable("RefreshTokens");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -290,9 +343,18 @@ namespace IdentityProj.Infrastructure.Migrations
                     b.Navigation("Company");
                 });
 
+            modelBuilder.Entity("IdentityProj.Data.Entity.RefreshToken", b =>
+                {
+                    b.HasOne("IdentityProj.Data.Entity.ApplicationUser", "User")
+                        .WithMany("RefreshTokens")
+                        .HasForeignKey("UserId1");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<int>", null)
+                    b.HasOne("IdentityProj.Data.Entity.ApplicationIdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -319,7 +381,7 @@ namespace IdentityProj.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<int>", null)
+                    b.HasOne("IdentityProj.Data.Entity.ApplicationIdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -339,6 +401,11 @@ namespace IdentityProj.Infrastructure.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("IdentityProj.Data.Entity.ApplicationUser", b =>
+                {
+                    b.Navigation("RefreshTokens");
                 });
 
             modelBuilder.Entity("IdentityProj.Data.Entity.Company", b =>

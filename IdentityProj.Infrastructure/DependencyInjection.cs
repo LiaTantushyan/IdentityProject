@@ -1,7 +1,4 @@
 ﻿using IdentityProj.Data.Entity;
-using IdentityProj.Infrastructure.Interfaces;
-using IdentityProj.Infrastructure.Repositories;
-using IdentityProj.Infrastructure.UnitOfWork;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -16,7 +13,7 @@ public static class DependencyInjection
         services.AddDbContext<ApplicationDbContext>(
             opt => opt.UseNpgsql(config.GetConnectionString("DefaultConnection")));
 
-        services.AddIdentity<ApplicationUser, IdentityRole<int>>(opt => opt.User.RequireUniqueEmail = true)
+        services.AddIdentity<ApplicationUser, ApplicationIdentityRole>(opt => opt.User.RequireUniqueEmail = true)
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
     }

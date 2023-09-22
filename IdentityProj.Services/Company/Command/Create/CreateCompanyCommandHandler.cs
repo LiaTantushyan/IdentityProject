@@ -23,8 +23,6 @@ public class CreateCompanyCommandHandler : BaseService, IRequestHandler<CreateCo
     {
         var company = Mapper.Map<CreateCompanyCommand, Data.Entity.Company>(request);
         
-        company.CreatedAt = DateTime.UtcNow;
-        
         await _unitOfWork.CompanyRepository.Create(company);
 
         var result = await _unitOfWork.SaveAsync();

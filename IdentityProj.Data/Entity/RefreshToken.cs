@@ -14,7 +14,7 @@ public class RefreshToken
 
     public bool Used { get; set; }
 
-    public bool Invalidated { get; set; }
+    public bool InValidated { get; set; }
 
     public long UserId { get; set; }
 

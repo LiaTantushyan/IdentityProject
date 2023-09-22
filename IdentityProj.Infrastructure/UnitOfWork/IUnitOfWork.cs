@@ -7,5 +7,7 @@ public interface IUnitOfWork
 {
     public ICompanyRepository CompanyRepository { get; }
 
+    public IRefreshTokenRepository RefreshTokenRepository { get; }
+
     Task<ResultInfoDto> SaveAsync();
 }

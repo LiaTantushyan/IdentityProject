@@ -224,3 +224,16 @@ C:\Users\User\RiderProjects\IIdentityProj\IdentityProj.API\obj\Debug\net6.0\refi
 C:\Users\User\RiderProjects\IIdentityProj\IdentityProj.API\obj\Debug\net6.0\IdentityProj.API.pdb
 C:\Users\User\RiderProjects\IIdentityProj\IdentityProj.API\obj\Debug\net6.0\IdentityProj.API.genruntimeconfig.cache
 C:\Users\User\RiderProjects\IIdentityProj\IdentityProj.API\obj\Debug\net6.0\ref\IdentityProj.API.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\Serilog.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\Serilog.AspNetCore.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\Serilog.Sinks.File.dll

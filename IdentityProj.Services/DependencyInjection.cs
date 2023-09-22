@@ -15,8 +15,9 @@ namespace IdentityProj.Services
         {
             service.AddScoped<UserManagerRepository>();
             service.AddScoped<IUnitOfWork, UnitOfWork>();
-            service.AddScoped<ITokenService, TokenService>();
+            service.AddScoped<IAuthService, AuthService>();
             service.AddScoped<ICompanyRepository, CompanyRepository>();
+            service.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
 
             service.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
