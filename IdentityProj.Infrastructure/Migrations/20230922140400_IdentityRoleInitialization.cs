@@ -17,8 +17,9 @@ namespace IdentityProj.Infrastructure.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "81259a79-f857-4f19-8f5b-7f17cb0c068c", "SuperAdmin", null },
-                    { 2, "b350695d-00df-4278-b012-d60aae21567b", "CompanyAdmin", null }
+                    { 1, "d6c85780-21bb-418e-9a87-616b3b419991", "SuperAdmin", "SUPERADMIN" },
+                    { 2, "dd9dcfaf-7287-4ce4-b44e-eba905e1b8f8", "CompanyAdmin", "COMPANYADMIN" },
+                    { 3, "ef8cc47c-315f-445e-b5b7-c6ca2863fb58", "Other", "OTHER" }
                 });
         }
 
@@ -34,6 +35,11 @@ namespace IdentityProj.Infrastructure.Migrations
                 table: "AspNetRoles",
                 keyColumn: "Id",
                 keyValue: 2);
+
+            migrationBuilder.DeleteData(
+                table: "AspNetRoles",
+                keyColumn: "Id",
+                keyValue: 3);
         }
     }
 }

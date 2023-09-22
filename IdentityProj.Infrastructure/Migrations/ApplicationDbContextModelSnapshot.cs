@@ -54,14 +54,23 @@ namespace IdentityProj.Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "81259a79-f857-4f19-8f5b-7f17cb0c068c",
-                            Name = "SuperAdmin"
+                            ConcurrencyStamp = "d6c85780-21bb-418e-9a87-616b3b419991",
+                            Name = "SuperAdmin",
+                            NormalizedName = "SUPERADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "b350695d-00df-4278-b012-d60aae21567b",
-                            Name = "CompanyAdmin"
+                            ConcurrencyStamp = "dd9dcfaf-7287-4ce4-b44e-eba905e1b8f8",
+                            Name = "CompanyAdmin",
+                            NormalizedName = "COMPANYADMIN"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ConcurrencyStamp = "ef8cc47c-315f-445e-b5b7-c6ca2863fb58",
+                            Name = "Other",
+                            NormalizedName = "OTHER"
                         });
                 });
 

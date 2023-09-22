@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
 using IdentityProj.Data.Entity;
-using IdentityProj.Data.Enumerations;
 using IdentityProj.Infrastructure.Repositories;
 using IdentityProj.Services.ApplicationUsers.DTOs;
 using Microsoft.AspNetCore.Identity;
@@ -21,7 +20,7 @@ public class CreateCommandHandler : BaseService, IRequestHandler<CreateCommand, 
         var user = Mapper.Map<ApplicationUser>(request);
         var result = await UserManagerRepository.CreateAsync(user, user.PasswordHash);
 
-        await UserManagerRepository.AddToRoleAsync(user, Roles.Other.ToString());
+        //await UserManagerRepository.AddToRoleAsync(user, Roles.Other.ToString());
 
         var userDto = Mapper.Map<ApplicationUser, CreateUserDto>(user);
         return Mapper.Map(result, userDto);
