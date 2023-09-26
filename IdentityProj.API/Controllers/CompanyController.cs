@@ -14,7 +14,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace IdentityProj.Controllers;
 
 [Route("[controller]/[action]")]
-[Authorize(Roles = "")]
 [ApiController]
 public class CompanyController : BaseController
 {
@@ -23,6 +22,7 @@ public class CompanyController : BaseController
     }
 
     [HttpPost]
+    [Authorize(Roles = nameof(UserRoles.CompanyAdmin))]
     public async Task<IActionResult> Create([FromBody] CompanyCreate model)
     {
         if (model.Status != null && !Enum.IsDefined(typeof(Status), model.Status))
@@ -39,6 +39,8 @@ public class CompanyController : BaseController
     }
 
     [HttpGet]
+    [Authorize(Roles =
+        nameof(UserRoles.SuperAdmin) + "," + nameof(UserRoles.CompanyAdmin) + "," + nameof(UserRoles.Standart))]
     public async Task<IActionResult> Get([FromQuery] int id)
     {
         var result = await Mediator.Send(new GetCompanyByIdQuery

@@ -1,4 +1,6 @@
-﻿using IdentityProj.Common.CustomExceptions;
+﻿using System.Net;
+using System.Security.Authentication;
+using IdentityProj.Common.CustomExceptions;
 using IdentityProj.Models.Response;
 using Newtonsoft.Json;
 
@@ -23,22 +25,39 @@ public class ExceptionHandlerMiddleware
         {
             await _next(context);
         }
-        catch (Exception exception)
+        catch (NullReferenceException e)
         {
-            // log the error
-            _logger.LogError(exception, "Error during executing {Context}", context.Request.Path.Value);
-            
-            var response = context.Response;
-            response.ContentType = "application/json";
-
-            // get the response model
-            var message = JsonConvert.SerializeObject(new ResponseModel()
-            {
-                Succeeded = false,
-                Errors = new[] { ErrorMessages.UnknownError }
-            });
-
-            await response.WriteAsync(message);
+            await HandleExceptionAsync(context, e, HttpStatusCode.InternalServerError);
         }
+        catch (FormatException e)
+        {
+            await HandleExceptionAsync(context, e, HttpStatusCode.InternalServerError);
+        }
+        catch (InvalidCastException e)
+        {
+            await HandleExceptionAsync(context, e, HttpStatusCode.BadRequest);
+        }
+        catch (InvalidOperationException e)
+        {
+            await HandleExceptionAsync(context, e, HttpStatusCode.BadRequest);
+        }
+        catch (Exception e)
+        {
+            await HandleExceptionAsync(context, e, HttpStatusCode.InternalServerError);
+        }
+    }
+
+    private async Task HandleExceptionAsync(HttpContext context, Exception exception, HttpStatusCode statusCode)
+    {
+        context.Response.ContentType = "application/json";
+        context.Response.StatusCode = (int)statusCode;
+
+        var response = JsonConvert.SerializeObject(new
+        {
+            StatusCode = (int)statusCode,
+            Message = exception.Message
+        });
+
+        await context.Response.WriteAsync(response);
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace IdentityProj.Data.Enumerations;
 
-public enum Roles
+public enum UserRoles
 {
     Standart = 1,
     CompanyAdmin = 2,
