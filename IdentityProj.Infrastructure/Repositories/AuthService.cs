@@ -16,14 +16,17 @@ public class AuthService : IAuthService
     private readonly TokenValidationParameters _tokenValidationParameters;
     private readonly IUnitOfWork _unitOfWork;
     private readonly JwtSettings _jwtSettings;
+    private readonly UserManagerRepository _userManager;
 
     public AuthService(
         JwtSettings jwtSettings,
         IUnitOfWork unitOfWork,
-        TokenValidationParameters tokenValidationParameters)
+        TokenValidationParameters tokenValidationParameters,
+        UserManagerRepository userManager)
     {
         _unitOfWork = unitOfWork;
         _jwtSettings = jwtSettings;
+        _userManager = userManager;
         _tokenValidationParameters = tokenValidationParameters;
     }
 
@@ -35,11 +38,14 @@ public class AuthService : IAuthService
 
         var claims = new List<Claim>
         {
-            new(JwtRegisteredClaimNames.Sub, user.Email),
+            new(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             new(JwtRegisteredClaimNames.Email, user.Email),
-            new("id", user.Id.ToString()),
         };
+
+        var roles = await _userManager.GetRolesAsync(user);
+
+        claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)).ToList());
 
         var tokenDescriptor = new SecurityTokenDescriptor
         {

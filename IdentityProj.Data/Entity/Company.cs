@@ -16,5 +16,5 @@ public class Company: BaseEntity
     public string Address { get; set; }
 
     public Status Status { get; set; }
-    public ICollection<ApplicationUser>? Employees { get; set; }
+    public ICollection<ApplicationUser> Employees { get; set; }
 }

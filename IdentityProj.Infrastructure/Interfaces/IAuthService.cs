@@ -8,5 +8,6 @@ namespace IdentityProj.Infrastructure.Interfaces;
 public interface IAuthService
 {
     Task<TokenDto> GenerateTokenAsync(ApplicationUser user);
+    
     ClaimsPrincipal? GetPrincipalFromToken(string? token);
 }

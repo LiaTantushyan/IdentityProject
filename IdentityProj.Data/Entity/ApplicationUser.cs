@@ -17,5 +17,5 @@ public class ApplicationUser : IdentityUser<int>
 
     public Company? Company { get; set; }
 
-    public ICollection<RefreshToken>? RefreshTokens { get; set; }
+    public ICollection<RefreshToken> RefreshTokens { get; set; }
 }

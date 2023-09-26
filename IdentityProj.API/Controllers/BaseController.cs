@@ -2,10 +2,10 @@
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.JsonWebTokens;
 
 namespace IdentityProj.Controllers;
 
-[ApiController]
 public class BaseController : Controller
 {
     private readonly IMediator _mediator;
@@ -25,7 +25,7 @@ public class BaseController : Controller
 
     protected int? GetCurrentUserId()
     {
-        if (int.TryParse(User.FindFirstValue("id"), out int userId))
+        if (int.TryParse(User.FindFirstValue(JwtRegisteredClaimNames.Sub), out int userId))
         {
             return userId;
         }

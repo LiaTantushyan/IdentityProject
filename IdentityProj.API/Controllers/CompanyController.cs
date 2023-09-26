@@ -13,8 +13,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace IdentityProj.Controllers;
 
-[Authorize]
 [Route("[controller]/[action]")]
+[Authorize(Roles = "")]
+[ApiController]
 public class CompanyController : BaseController
 {
     public CompanyController(IMapper mapper, IMediator mediator) : base(mapper, mediator)

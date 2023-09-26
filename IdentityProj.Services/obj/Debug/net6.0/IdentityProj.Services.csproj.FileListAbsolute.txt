@@ -36,3 +36,5 @@ C:\Users\User\RiderProjects\IIdentityProj\IdentityProj.Services\obj\Debug\net6.0
 C:\Users\User\RiderProjects\IIdentityProj\IdentityProj.Services\obj\Debug\net6.0\refint\IdentityProj.Services.dll
 C:\Users\User\RiderProjects\IIdentityProj\IdentityProj.Services\obj\Debug\net6.0\IdentityProj.Services.pdb
 C:\Users\User\RiderProjects\IIdentityProj\IdentityProj.Services\obj\Debug\net6.0\ref\IdentityProj.Services.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Services\bin\Debug\net6.0\IdentityProj.PostgreSQL.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.Services\bin\Debug\net6.0\IdentityProj.PostgreSQL.pdb

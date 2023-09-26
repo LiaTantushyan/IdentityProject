@@ -237,3 +237,6 @@ C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6
 C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\Serilog.Sinks.Console.dll
 C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
 C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\IdentityProj.PostgreSQL.dll
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\IdentityProj.PostgreSQL.pdb
+C:\Users\l.tantushyan\Desktop\Projs\IdentityProj\IdentityProj.API\bin\Debug\net6.0\IdentityServer4.AspNetIdentity.dll

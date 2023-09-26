@@ -1,6 +1,5 @@
 ﻿using System.Reflection;
 using IdentityProj.Data.Entity;
-using IdentityProj.Data.Enumerations;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -11,9 +10,9 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
     IdentityUserClaim<int>,
     IdentityUserRole<int>, IdentityUserLogin<int>, IdentityRoleClaim<int>, IdentityUserToken<int>>
 {
-    public DbSet<Company?> Companies { get; set; }
+    public DbSet<Company> Companies { get; set; } = null!;
 
-    public DbSet<RefreshToken?> RefreshTokens { get; set; }
+    public DbSet<RefreshToken> RefreshTokens { get; set; } = null!;
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)

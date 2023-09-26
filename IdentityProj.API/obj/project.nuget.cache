@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hGBZB/esozUGevFfMCP1oJDI3ffaTLrAUyZabGD8IhQzLFYSALUTC75Orc9dHmDKfO5ZZ3v/Y5+Zz23MiQij3w==",
+  "dgSpecHash": "RikJbuxnNsFUW35WwDREobIUI1gmOD2vysukPAfLN/H9Ili1Tebp8VLPIcuHDk49A2aiXJWkwRx8YgjeBVa2Bg==",
   "success": true,
   "projectFilePath": "C:\\Users\\l.tantushyan\\Desktop\\Projs\\IdentityProj\\IdentityProj.API\\IdentityProj.API.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\l.tantushyan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\l.tantushyan\\.nuget\\packages\\identitymodel\\4.4.0\\identitymodel.4.4.0.nupkg.sha512",
     "C:\\Users\\l.tantushyan\\.nuget\\packages\\identityserver4\\4.1.2\\identityserver4.4.1.2.nupkg.sha512",
+    "C:\\Users\\l.tantushyan\\.nuget\\packages\\identityserver4.aspnetidentity\\4.1.2\\identityserver4.aspnetidentity.4.1.2.nupkg.sha512",
     "C:\\Users\\l.tantushyan\\.nuget\\packages\\identityserver4.storage\\4.1.2\\identityserver4.storage.4.1.2.nupkg.sha512",
     "C:\\Users\\l.tantushyan\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
     "C:\\Users\\l.tantushyan\\.nuget\\packages\\mediatr.behaviors.authorization\\12.0.2\\mediatr.behaviors.authorization.12.0.2.nupkg.sha512",

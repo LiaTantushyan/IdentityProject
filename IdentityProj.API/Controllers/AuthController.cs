@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace IdentityProj.Controllers;
 
+[ApiController]
 [Route("[controller]/[action]")]
 public class AuthController : BaseController
 {

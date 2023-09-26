@@ -1,7 +1,7 @@
 using System.Reflection;
 using IdentityProj.Extensions;
-using IdentityProj.Infrastructure;
 using IdentityProj.Middlewares;
+using IdentityProj.PostgreSQL;
 using IdentityProj.Services;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -12,8 +12,6 @@ builder.Host.UseSerilog((hostingContext, services, loggerConfiguration) => logge
     .ReadFrom.Configuration(hostingContext.Configuration));
 
 builder.Services.AddControllers();
-//builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-//builder.Services.AddIdentity<ApplicationUser, IdentityRole>();
 
 builder.Services.AddServices();
 
@@ -21,6 +19,14 @@ builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddConfigurations(builder.Configuration);
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+/*builder.Services.AddIdentityServer()
+// For development, use a real signing credential in production
+    // .AddInMemoryApiResources(Config.GetApiResources()) // Define your API resources
+    // .AddInMemoryClients(Config.GetClients()) // Define your client applications
+    .AddInMemoryClients(Configs.GetClients())
+    .AddDeveloperSigningCredential();
+// .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>();*/
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -36,8 +42,9 @@ builder.Services.AddSwaggerGen(option =>
         Name = "Authorization",
         Type = SecuritySchemeType.Http,
         BearerFormat = "JWT",
-        Scheme = "Bearer"
+        Scheme = "Bearer",
     });
+
     option.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
@@ -45,11 +52,11 @@ builder.Services.AddSwaggerGen(option =>
             {
                 Reference = new OpenApiReference
                 {
-                    Type=ReferenceType.SecurityScheme,
-                    Id="Bearer"
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
                 }
             },
-            new string[]{}
+            new string[] { }
         }
     });
 });

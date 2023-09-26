@@ -22,6 +22,7 @@
     <ItemGroup>
       <ProjectReference Include="..\IdentityProj.Common\IdentityProj.Common.csproj" />
       <ProjectReference Include="..\IdentityProj.Data\IdentityProj.Data.csproj" />
+      <ProjectReference Include="..\IdentityProj.PostgreSQL\IdentityProj.PostgreSQL.csproj" />
     </ItemGroup>
 
 </Project>
