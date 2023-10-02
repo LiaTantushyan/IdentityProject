@@ -6,6 +6,6 @@ public static class Installer
     {
         SwaggerInstaller.Install(services, configuration);
 
-        TokenInstaller.Install(services, configuration);
+        TokenInstaller. Install(services, configuration);
     }
 }
