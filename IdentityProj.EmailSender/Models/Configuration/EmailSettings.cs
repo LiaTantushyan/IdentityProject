@@ -2,11 +2,15 @@
 
 public class EmailSettings
 {
-    public int Port { get; set; }
+    public string ApiKey { get; set; } = null!;
 
-    public string Host { get; set; } = null!;
+    public string SendFrom { get; set; } = null!;
+    
+    public string GMail { get; set; } = null!;
 
-    public string Email { get; set; } = null!;
+    public string WriteUsTemplateId { get; set; } = null!;
 
-    public string Password { get; set; } = null!;
+    public string ConfirmTemplateId { get; set; } = null!;
+
+    public string EmailNotificationId { get; set; } = null!;
 }

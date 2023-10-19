@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using FluentValidation;
+using IdentityProj.Common.Interfaces.EmailSender;
 using IdentityProj.Infrastructure.Interfaces;
 using IdentityProj.Infrastructure.Repositories;
 using IdentityProj.Infrastructure.UnitOfWork;

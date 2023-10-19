@@ -6,4 +6,17 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Interfaces\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Refit" Version="7.0.0" />
+      <PackageReference Include="Shed.CoreKit.WebApi.Abstractions" Version="1.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\IdentityProj.EmailSender.Data\IdentityProj.EmailSender.Data.csproj" />
+    </ItemGroup>
+
 </Project>

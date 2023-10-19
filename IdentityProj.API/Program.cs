@@ -1,9 +1,11 @@
 using System.Reflection;
+using IdentityProj.Common.Interfaces.EmailSender;
 using IdentityProj.Infrastructure;
 using IdentityProj.Infrastructure.Seed;
 using IdentityProj.Installers;
 using IdentityProj.Middlewares;
 using IdentityProj.Services;
+using Refit;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,15 +20,18 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Services.AddControllers();
 
-builder.Services.AddServices();
+builder.Services.AddRefitClient<IEmailSenderApi>().ConfigureHttpClient(c => c.BaseAddress = new Uri("https://localhost:7004"));
 
 builder.Services.AddInfrastructure(builder.Configuration);
+
+builder.Services.AddServices();
 
 builder.Services.InstallServices(builder.Configuration);
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 builder.Services.AddEndpointsApiExplorer();
+
 
 var app = builder.Build();
 

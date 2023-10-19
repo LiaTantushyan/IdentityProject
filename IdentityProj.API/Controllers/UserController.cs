@@ -2,7 +2,9 @@
 using AutoMapper;
 using IdentityProj.Common.Constants;
 using IdentityProj.Common.Enum;
+using IdentityProj.Common.Interfaces.EmailSender;
 using IdentityProj.Common.Models;
+using IdentityProj.Common.Models.Email;
 using IdentityProj.Models.Request.Role;
 using IdentityProj.Models.Request.User;
 using IdentityProj.Models.Response;
@@ -24,8 +26,14 @@ namespace IdentityProj.Controllers;
 [Route("[controller]/[action]")]
 public class UserController : BaseController
 {
-    public UserController(IMapper mapper, IMediator mediator) : base(mapper, mediator)
+    private readonly IEmailSenderApi _emailSenderApi;
+
+    public UserController(IMapper mapper,
+        IMediator mediator,
+        IEmailSenderApi emailSenderApi)
+        : base(mapper, mediator)
     {
+        _emailSenderApi = emailSenderApi;
     }
 
     [HttpGet]
@@ -44,6 +52,17 @@ public class UserController : BaseController
     {
         var comm = Mapper.Map<UserCreateRequest, CreateCommand>(model);
         var result = await Mediator.Send(comm);
+
+        if (result.Succeeded)
+        {
+            await _emailSenderApi.SendEmailAsync(new EmailModel
+            {
+                Content = "Hello world",
+                ReceiverId = 1,
+                Receiver = "tantushyanlia9@gmail.com",
+                Subject = "Email sender test"
+            });
+        }
 
         return Json(Mapper.Map<CreateUserDto, CreateUserResponse>(result));
     }
@@ -67,7 +86,7 @@ public class UserController : BaseController
 
         return Json(Mapper.Map<UpdateUserDto, UpdateUserResponse>(result));
     }
-    
+
     [HttpPost]
     [Authorize(Roles = nameof(UserRoles.Supervisor))]
     public async Task<ResponseModel> AddRole(UserRole model)

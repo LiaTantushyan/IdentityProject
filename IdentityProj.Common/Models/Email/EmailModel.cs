@@ -1,4 +1,4 @@
-﻿namespace IdentityProj.EmailSender.Models;
+﻿namespace IdentityProj.Common.Models.Email;
 
 public class EmailModel
 {

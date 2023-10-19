@@ -1,21 +1,21 @@
-﻿using System.Net;
-using System.Net.Mail;
-using IdentityProj.Common.Models;
+﻿using IdentityProj.Common.Models;
+using IdentityProj.Common.Models.Email;
 using IdentityProj.EmailSender.Data;
 using IdentityProj.EmailSender.Data.Entity;
 using IdentityProj.EmailSender.Models;
 using IdentityProj.EmailSender.Models.Configuration;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 
 namespace IdentityProj.EmailSender.Services;
 
 public class EmailSenderService
 {
     private readonly EmailSettings _emailSettings;
+
     private readonly EmailSenderDbContext _dbContext;
 
-    public EmailSenderService(
-        EmailSettings emailSettings,
-        EmailSenderDbContext dbContext)
+    public EmailSenderService(EmailSenderDbContext dbContext, EmailSettings emailSettings)
     {
         _dbContext = dbContext;
         _emailSettings = emailSettings;
@@ -42,36 +42,26 @@ public class EmailSenderService
 
     private async Task<ResultInfoDto> TrySendEmailAsync(EmailModel model)
     {
-        var sendResult = new ResultInfoDto();
+        var resultInfo = new ResultInfoDto();
 
-        var message = new MailMessage();
+        var apiKey = _emailSettings.ApiKey;
 
-        message.To.Add(new MailAddress(model.Receiver));
+        var client = new SendGridClient(apiKey);
 
-        message.Body = model.Content;
-        message.Subject = model.Subject;
-        message.From = new MailAddress(_emailSettings.Email, "Test IdentityProj");
-
-        var smtp = new SmtpClient
-        {
-            EnableSsl = true,
-            Port = _emailSettings.Port,
-            Host = _emailSettings.Host,
-            UseDefaultCredentials = false,
-            DeliveryMethod = SmtpDeliveryMethod.Network,
-            Credentials = new NetworkCredential(_emailSettings.Email, _emailSettings.Password),
-        };
+        var msg = MailHelper.CreateSingleEmail(new EmailAddress(_emailSettings.GMail), new EmailAddress(model.Receiver),
+            model.Subject, "xxx", "yyy");
 
         try
         {
-            await smtp.SendMailAsync(message);
-            sendResult.Succeeded = true;
+            var response = await client.SendEmailAsync(msg);
+
+            resultInfo.Succeeded = response.IsSuccessStatusCode;
         }
         catch (Exception e)
         {
-            sendResult.Errors = new[] { e.Message };
+            resultInfo.Errors = new[] { e.Message };
         }
 
-        return sendResult;
+        return resultInfo;
     }
 }
